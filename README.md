@@ -1,6 +1,6 @@
 # ------ 2.2 Tester Programme ---------
 
-# importing needed libraries, as well as functions from vector.py 
+# importing needed libraries, as well as functions from vector.py
 import random
 import vector
 
@@ -9,12 +9,12 @@ from vector import find_magnitude, sum_vectors, cross_product, dot_product, chec
 # create function that creates random 3d vector using the random library
 
 def create_rand_vect():
-    vector = [random.randint(0,9),random.randint(0,9),random.randint(0,9)]
+    vector = [float(random.randint(0,9)),float(random.randint(0,9)),float(random.randint(0,9))]
     return vector
 
-# randomly create vectors v1, v2 and v3, storing as python lists 
+# randomly create vectors v1, v2 and v3, storing as python lists
 
-v1 = create_rand_vect() 
+v1 = create_rand_vect()
 v2 = create_rand_vect()
 v3 = create_rand_vect()
 
@@ -62,7 +62,7 @@ def check_vector_triple_product(vector1,vector2,vector3):
     else:
         return False
 
-# printing the results of these checks because why not
+# printing the results of these checks because why not 
 
 print("Using Vectors v1,v2 and v3, the following vector identities are shown to be (hopefully) True:")
 print("v1 × v2 = −v2 × v1 : " + str(check_anti_commutative(v1,v2)))
