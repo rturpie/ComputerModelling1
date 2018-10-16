@@ -53,13 +53,14 @@ def diff_vectors(vector1,vector2):
             new_vector.append(vector1[i] - vector2[i])
         return new_vector
 
-# cross product 3d vector
+# cross product of a 3d vector
+# using cross product expansion
 
 def cross_product(v1,v2):
     c_p = [(v1[1]*v2[2] - v1[2]*v2[1]), (v1[2]*v2[0] - v1[0]*v2[2]), (v1[0]*v2[1] - v1[1]*v2[0])]
     return c_p
 
-# dot product vector
+# dot product of a vector
 
 def dot_product(vector1,vector2):
     new_vector = 0
@@ -78,7 +79,3 @@ def check_same(vector1, vector2):
                 so_far = False
         return so_far
     return False
-
-
-print(check_same(v1,v2))
-
