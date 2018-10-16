@@ -68,3 +68,53 @@ print("Using Vectors v1,v2 and v3, the following vector identities are shown to 
 print("v1 × v2 = −v2 × v1 : " + str(check_anti_commutative(v1,v2)))
 print("v1 × (v2 + v3) = (v1 × v2) + (v1 × v3) : " + str(check_distributive(v1,v2,v3)))
 print("v1 × (v2 × v3) = (v1 · v3)v2 − (v1 · v2)v3 : " + str(check_vector_triple_product(v1,v2,v3)))
+
+
+
+#    ------- 2.3 Vector manipulation with numpy --------
+
+import random
+import numpy as np
+
+# create function that creates random 3d vectors and stores as (1,3) numpy arrays
+
+def create_rand_np_vect():
+    random_vector =  np.array([random.randint(0,9), random.randint(0,9), random.randint(0,9)], float)
+    return random_vector
+
+# create 3 random 3d vectors
+
+v1 = create_rand_np_vect()
+v2 = create_rand_np_vect()
+v3 = create_rand_np_vect()
+
+# magnitudes
+
+def find_magnitude_np(vector):
+    magnitude = (np.sum(vector*vector))**0.5
+    return magnitude
+
+# vector sum
+
+def sum_vectors_np(vector1, vector2):
+    new_vector = vector1 + vector2
+    return new_vector
+
+# vector dot product
+
+def dot_product_np(vector1, vector2):
+    dot_product = np.sum(vector1*vector2)
+    return dot_product
+
+# vector cross product
+
+def cross_product_np(vector1, vector2):
+    cross_product = np.cross(vector1, vector2)
+    return cross_product
+
+
+print(v1)
+print(v2)
+print(find_magnitude_np(v1))
+
+
