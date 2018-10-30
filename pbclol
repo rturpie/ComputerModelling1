@@ -1,0 +1,28 @@
+import numpy as np
+
+test_vector = np.array([0.1,0.9])
+
+def pbc(vector,l):
+    for i in range(np.ma.size(vector)):
+        vector[i] = np.mod(vector[i],l)
+    return vector
+
+def mic(vector,l):
+    vector = pbc(vector,l)
+    for i in range(np.ma.size(vector)):
+        if vector[i] > l/2:
+            vector[i] = -(l - (vector[i]))
+    return vector
+
+def main():
+    print("please enter your chosen vector in the form: x1,x2,x3 ")
+    print("where x1, x2 and x3 are numbers of your choosing")
+    user_vector = input("vector x = ")
+    user_vector = list(map(lambda a: float(a), user_vector.split(",")))
+    user_vector = np.array(user_vector)
+    print("please enter your chosen cube side length as a number : ")
+    user_l = float(input("l = "))
+    print("The image of x inside the cube 0 <= xi < l is: " + str(pbc(user_vector,user_l)))
+    print("The image of x closest to the origin is: " + str(mic(user_vector,user_l)))
+
+main()
